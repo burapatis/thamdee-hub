@@ -1,0 +1,29 @@
+{{- $hp := hugo.Data.homepage -}}
+{{- $items := slice -}}
+{{- with resources.GetRemote site.Params.newsFeedUrl -}}
+  {{- with . | transform.Unmarshal -}}
+    {{- with index . "rss" "channel" "item" -}}
+      {{- if reflect.IsSlice . -}}
+        {{- $items = first 3 . -}}
+      {{- else -}}
+        {{- $items = slice . -}}
+      {{- end -}}
+    {{- end -}}
+  {{- end -}}
+{{- end -}}
+
+{{- if gt (len $items) 0 -}}
+<ul class="card-grid news-grid" role="list">
+  {{- range $items -}}
+  <li class="card news-card reveal">
+    <h3 class="news-card-title">
+      <a href="{{ .link | safeURL }}" target="_blank" rel="noopener noreferrer">{{ .title }}<span class="visually-hidden">{{ $hp.news.opens_new_tab }}</span></a>
+    </h3>
+    <p>{{ .description }}</p>
+    <a class="card-link" href="{{ .link | safeURL }}" target="_blank" rel="noopener noreferrer">{{ $hp.news.read_more }} →<span class="visually-hidden"> — {{ .title }}{{ $hp.news.opens_new_tab }}</span></a>
+  </li>
+  {{- end -}}
+</ul>
+{{- else -}}
+<p class="lead news-empty">{{ $hp.news.empty }} <a href="{{ site.Params.newsPageUrl | safeURL }}" target="_blank" rel="noopener noreferrer">thamdee.com/news/</a></p>
+{{- end -}}

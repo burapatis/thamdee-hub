@@ -1,0 +1,52 @@
+{{ define "main" }}
+{{- $hp := hugo.Data.homepage -}}
+{{- $projects := hugo.Data.projects -}}
+
+<section class="hero" aria-labelledby="hero-heading">
+  <div class="container hero-inner">
+    <p class="eyebrow">{{ $hp.hero.eyebrow }}</p>
+    <h1 id="hero-heading">{{ $hp.hero.headline }}</h1>
+    <p class="hero-sub">{{ $hp.hero.subheadline }}</p>
+    <div class="hero-actions">
+      <a class="btn btn-primary" href="{{ $hp.hero.cta_primary.url }}">{{ $hp.hero.cta_primary.label }}</a>
+      <a class="btn btn-ghost" href="{{ $hp.hero.cta_secondary.url | safeURL }}" target="_blank" rel="noopener noreferrer">{{ $hp.hero.cta_secondary.label }}<span class="visually-hidden">{{ $hp.ui.opens_new_tab }}</span></a>
+    </div>
+  </div>
+</section>
+
+<section id="projects" class="section section-alt" aria-labelledby="projects-heading">
+  <div class="container">
+    <div class="section-head">
+      <p class="eyebrow">{{ $hp.projects.eyebrow }}</p>
+      <h2 id="projects-heading">{{ $hp.projects.heading }}</h2>
+      <p class="lead">{{ $hp.projects.lead }}</p>
+    </div>
+    <ul class="card-grid" role="list">
+      {{ range $projects }}
+      <li class="card reveal">
+        <span class="chip chip-{{ .category }}">{{ .category_label }}</span>
+        <h3>{{ .title }}</h3>
+        <p class="card-en">{{ .title_en }}</p>
+        <p>{{ .description }}</p>
+        <p class="card-audience">{{ $hp.ui.audience_prefix }} {{ .audience }}</p>
+        <a class="card-link" href="{{ .url | safeURL }}" target="_blank" rel="noopener noreferrer">{{ .cta }} →<span class="visually-hidden"> — {{ .title }}{{ $hp.ui.opens_new_tab }}</span></a>
+      </li>
+      {{ end }}
+    </ul>
+  </div>
+</section>
+
+<section id="news" class="section" aria-labelledby="news-heading">
+  <div class="container">
+    <div class="section-head">
+      <p class="eyebrow">{{ $hp.news.eyebrow }}</p>
+      <h2 id="news-heading">{{ $hp.news.heading }}</h2>
+      <p class="lead">{{ $hp.news.lead }}</p>
+    </div>
+    {{ partial "news-feed.html" . }}
+    <p class="news-cta">
+      <a class="btn btn-outline" href="{{ $hp.news.cta.url | safeURL }}" target="_blank" rel="noopener noreferrer">{{ $hp.news.cta.label }}<span class="visually-hidden">{{ $hp.ui.opens_new_tab }}</span></a>
+    </p>
+  </div>
+</section>
+{{ end }}

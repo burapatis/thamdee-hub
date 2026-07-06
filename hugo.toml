@@ -1,0 +1,46 @@
+baseURL = "https://hub.thamdee.com/"
+locale = "th-TH"
+defaultContentLanguage = "th"
+title = "Thamdee Hub — ศูนย์รวมคอนเทนต์และแหล่งเรียนรู้"
+enableRobotsTXT = true
+timeZone = "Asia/Bangkok"
+disableKinds = ["taxonomy", "term"]
+
+[outputs]
+  home = ["HTML"]
+  page = ["HTML"]
+
+[params]
+  siteName = "Thamdee Hub"
+  shortName = "Thamdee Hub"
+  description = "ศูนย์รวมบทความ ข่าวสาร และลิงก์ไปยังทุกโปรเจกต์ใน Thamdee Ecosystem — แอป สื่อความรู้ และศูนย์ความรู้สำหรับคนการศึกษา"
+  ogHomeTitle = "Thamdee Hub — ศูนย์รวมคอนเทนต์ Thamdee"
+  contactEmail = "burapatis@gmail.com"
+  ecosystemUrl = "https://thamdee.com/"
+  newsFeedUrl = "https://thamdee.com/news/index.xml"
+  newsPageUrl = "https://thamdee.com/news/"
+  foundingYear = 2024
+
+[menus]
+  [[menus.main]]
+    name = "หน้าแรก"
+    url = "/"
+    weight = 10
+  [[menus.main]]
+    name = "โปรเจกต์"
+    url = "/#projects"
+    weight = 20
+  [[menus.main]]
+    name = "ข่าวสาร"
+    url = "/#news"
+    weight = 30
+  [[menus.main]]
+    name = "thamdee.com"
+    url = "https://thamdee.com/"
+    weight = 40
+
+[markup.goldmark.renderer]
+  unsafe = false
+
+[minify]
+  minifyOutput = true

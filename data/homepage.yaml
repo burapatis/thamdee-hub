@@ -1,0 +1,40 @@
+# ข้อความหน้า Thamdee Hub
+
+hero:
+  eyebrow: "Thamdee Hub"
+  headline: "ศูนย์รวมคอนเทนต์และแหล่งเรียนรู้"
+  subheadline: "รวบรวมลิงก์ไปยังทุกโปรเจกต์ใน Thamdee Ecosystem และข่าวสารล่าสุดจาก thamdee.com — เลือกจุดเริ่มต้นการเรียนรู้ที่ตรงกับคุณ"
+  cta_primary:
+    label: "ดูโปรเจกต์ทั้งหมด"
+    url: "#projects"
+  cta_secondary:
+    label: "กลับ thamdee.com"
+    url: "https://thamdee.com/"
+
+projects:
+  eyebrow: "Ecosystem"
+  heading: "โปรเจกต์ในเครือ Thamdee"
+  lead: "แต่ละโปรเจกต์ทำงานเชื่อมโยงกัน — แอปช่วยในชีวิตประจำวัน สื่อพาเรียนรู้แบบวิดีโอ และศูนย์ความรู้ให้ความลึกเฉพาะทาง"
+
+news:
+  eyebrow: "ข่าวสาร"
+  heading: "ข่าวล่าสุดจาก Thamdee"
+  lead: "อัปเดตการเปิดตัวแอป ศูนย์ความรู้ และประกาศสำคัญจาก thamdee.com"
+  cta:
+    label: "ดูข่าวทั้งหมด"
+    url: "https://thamdee.com/news/"
+  empty: "ยังไม่สามารถดึงข่าวได้ในขณะนี้ — ลองดูที่ thamdee.com/news/"
+  read_more: "อ่านต่อ"
+  opens_new_tab: " (เปิดในแท็บใหม่)"
+
+ui:
+  menu: "เมนู"
+  skip_link: "ข้ามไปเนื้อหาหลัก"
+  back_home: "กลับหน้าแรก Hub"
+  nav_ecosystem: "thamdee.com"
+  opens_new_tab: " (เปิดในแท็บใหม่)"
+  audience_prefix: "เหมาะกับ:"
+
+footer:
+  about: "Thamdee Hub คือพอร์ทัลรวมลิงก์และข่าวสารจาก Thamdee Ecosystem — ส่วนหนึ่งของ thamdee.com"
+  ecosystem_link: "Thamdee Ecosystem"

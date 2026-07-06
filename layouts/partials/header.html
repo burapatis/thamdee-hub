@@ -1,0 +1,28 @@
+{{- $hp := hugo.Data.homepage -}}
+<header class="site-header">
+  <div class="container header-inner">
+    <a class="brand" href="/" aria-label="Thamdee Hub — {{ $hp.ui.back_home }}">
+      {{ partial "logo.html" . }}
+      <span class="brand-text">Thamdee<span class="brand-dot"> Hub</span></span>
+    </a>
+
+    <button class="nav-toggle" aria-expanded="false" aria-controls="site-nav">
+      <span class="nav-toggle-bar" aria-hidden="true"></span>
+      <span class="nav-toggle-label">{{ $hp.ui.menu }}</span>
+    </button>
+
+    <nav id="site-nav" class="site-nav" aria-label="{{ $hp.ui.menu }}">
+      <ul>
+        {{ range site.Menus.main }}
+        <li>
+          {{- if hasPrefix .URL "http" -}}
+          <a href="{{ .URL | safeURL }}" target="_blank" rel="noopener noreferrer">{{ .Name }}<span class="visually-hidden">{{ $hp.ui.opens_new_tab }}</span></a>
+          {{- else -}}
+          <a href="{{ .URL }}">{{ .Name }}</a>
+          {{- end -}}
+        </li>
+        {{ end }}
+      </ul>
+    </nav>
+  </div>
+</header>

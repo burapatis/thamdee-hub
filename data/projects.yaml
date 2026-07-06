@@ -1,0 +1,78 @@
+# โปรเจกต์ทั้งหมดในเครือ Thamdee Ecosystem (ซิงก์กับ thamdee-site)
+
+- id: apps
+  title: "แอปมือถือ Thamdee"
+  title_en: "Thamdee Apps"
+  category: app
+  category_label: "แอปพลิเคชัน"
+  description: "รวมแอปที่พัฒนาโดย Thamdee ทั้งด้านสุขภาพ การเตือนความจำ การทำงาน และการเรียนรู้"
+  url: "https://app.thamdee.com"
+  cta: "ดูแอปทั้งหมด"
+  status: live
+  audience: "ทุกคนในชีวิตประจำวัน"
+
+- id: youtube
+  title: "ช่อง YouTube"
+  title_en: "Thamdee on YouTube"
+  category: content
+  category_label: "วิดีโอความรู้"
+  description: "วิดีโอเจาะลึกเรื่อง AI เทคโนโลยี การศึกษา และแนวโน้มโลก"
+  url: "https://media.thamdee.com"
+  cta: "ดูช่อง YouTube"
+  status: live
+  audience: "ผู้ที่ชอบเรียนรู้แบบเจาะลึก"
+
+- id: tiktok
+  title: "ช่อง TikTok"
+  title_en: "Thamdee on TikTok"
+  category: content
+  category_label: "คอนเทนต์สั้น"
+  description: "ความรู้แบบสั้น กระชับ เข้าใจได้ในไม่กี่นาที"
+  url: "https://media.thamdee.com"
+  cta: "ดูช่อง TikTok"
+  status: live
+  audience: "ผู้เรียนรู้ยุคใหม่"
+
+- id: teacher
+  title: "ความรู้วิชาชีพครู"
+  title_en: "Teacher Knowledge"
+  category: knowledge
+  category_label: "ศูนย์ความรู้"
+  description: "หลักการ มาตรฐาน จรรยาบรรณ และแนวทางพัฒนาวิชาชีพครู"
+  url: "https://krujit.com"
+  cta: "สำหรับครู"
+  status: live
+  audience: "ครูและบุคลากรทางการศึกษา"
+
+- id: gced
+  title: "ความรู้ GCED"
+  title_en: "GCED Knowledge"
+  category: knowledge
+  category_label: "ศูนย์ความรู้"
+  description: "Global Citizenship Education และความเข้าใจระหว่างวัฒนธรรม"
+  url: "https://gced.thamdee.com"
+  cta: "เรียนรู้ GCED"
+  status: live
+  audience: "ครู ผู้เรียน และผู้สนใจพลเมืองโลก"
+
+- id: admin
+  title: "ความรู้ผู้บริหารสถานศึกษา"
+  title_en: "School Leadership"
+  category: knowledge
+  category_label: "ศูนย์ความรู้"
+  description: "ภาวะผู้นำ การบริหารโรงเรียน และมาตรฐานวิชาชีพผู้บริหาร"
+  url: "https://admin.thamdee.com"
+  cta: "สำหรับผู้บริหาร"
+  status: live
+  audience: "ผู้บริหารสถานศึกษา"
+
+- id: law
+  title: "กฎหมายการศึกษา"
+  title_en: "Education Law"
+  category: knowledge
+  category_label: "ศูนย์ความรู้"
+  description: "แหล่งรวมกฎหมายการศึกษาที่จัดหมวดหมู่ไว้ให้ค้นง่าย"
+  url: "https://law.thamdee.com"
+  cta: "ค้นกฎหมายการศึกษา"
+  status: live
+  audience: "ครู ผู้บริหาร และผู้สนใจกฎหมาย"

@@ -1,0 +1,42 @@
+{{- $hp := site.Data.homepage -}}
+{{- $isHome := .IsHome -}}
+{{- $title := cond $isHome site.Title (printf "%s | %s" .Title site.Params.siteName) -}}
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>{{ $title }}</title>
+<meta name="description" content="{{ site.Params.description }}">
+<link rel="canonical" href="{{ .Permalink }}">
+<meta name="theme-color" content="#17614f">
+
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="{{ site.Params.siteName }}">
+<meta property="og:title" content="{{ cond $isHome site.Params.ogHomeTitle $title }}">
+<meta property="og:description" content="{{ site.Params.description }}">
+<meta property="og:url" content="{{ .Permalink }}">
+<meta property="og:locale" content="th_TH">
+<meta name="twitter:card" content="summary">
+
+<link rel="icon" href="/favicon.svg" type="image/svg+xml">
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans+Thai+Looped:wght@400;500;600;700&family=Prompt:wght@600;700&display=swap" rel="stylesheet">
+
+{{ $css := resources.Get "css/main.css" | minify | fingerprint }}
+<link rel="stylesheet" href="{{ $css.RelPermalink }}">
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "WebSite",
+  "name": {{ site.Params.siteName | jsonify }},
+  "url": {{ site.BaseURL | jsonify }},
+  "description": {{ site.Params.description | jsonify }},
+  "inLanguage": "th-TH",
+  "publisher": {
+    "@type": "Organization",
+    "name": "Thamdee",
+    "url": {{ site.Params.ecosystemUrl | jsonify }}
+  }
+}
+</script>
