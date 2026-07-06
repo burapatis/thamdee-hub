@@ -20,7 +20,17 @@
 {{- if gt (len $items) 0 -}}
 <ul class="card-grid news-grid" role="list">
   {{- range $items -}}
+  {{- $cover := index . "cover" -}}
+  {{- if not $cover -}}
+    {{- with urls.Parse .link -}}
+      {{- $slug := path.Base .Path -}}
+      {{- $cover = printf "https://thamdee.com/images/news/%s.svg" $slug -}}
+    {{- end -}}
+  {{- end -}}
   <li class="card news-card reveal">
+    {{- with $cover -}}
+    <div class="news-card-cover" style="--cover: url('{{ . }}')" role="img" aria-label=""></div>
+    {{- end -}}
     <h3 class="news-card-title">
       <a href="{{ .link | safeURL }}" target="_blank" rel="noopener noreferrer">{{ .title }}<span class="visually-hidden">{{ $hp.news.opens_new_tab }}</span></a>
     </h3>
