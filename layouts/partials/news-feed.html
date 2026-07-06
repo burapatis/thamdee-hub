@@ -1,8 +1,13 @@
 {{- $hp := hugo.Data.homepage -}}
 {{- $items := slice -}}
-{{- with resources.GetRemote site.Params.newsFeedUrl -}}
+{{- $feed := resources.Get "news/feed.xml" -}}
+{{- if not $feed -}}
+  {{- $feed = resources.GetRemote site.Params.newsFeedUrl -}}
+{{- end -}}
+{{- with $feed -}}
   {{- with . | transform.Unmarshal -}}
-    {{- with index . "rss" "channel" "item" -}}
+    {{- $channel := index . "channel" -}}
+    {{- with index $channel "item" -}}
       {{- if reflect.IsSlice . -}}
         {{- $items = first 3 . -}}
       {{- else -}}

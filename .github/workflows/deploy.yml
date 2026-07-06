@@ -32,6 +32,11 @@ jobs:
       - name: Checkout
         uses: actions/checkout@v4
 
+      - name: Fetch Thamdee news feed
+        run: |
+          mkdir -p assets/news
+          curl -fsSL "https://thamdee.com/news/index.xml" -o assets/news/feed.xml
+
       - name: Setup Pages
         id: pages
         uses: actions/configure-pages@v5

@@ -44,3 +44,8 @@ disableKinds = ["taxonomy", "term"]
 
 [minify]
   minifyOutput = true
+
+[security]
+  [security.http]
+    methods = ["(?i)GET"]
+    urls = ["^https://thamdee\\.com/"]

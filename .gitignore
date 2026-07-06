@@ -1,4 +1,5 @@
 public/
 resources/_gen/
+assets/news/feed.xml
 .hugo_build.lock
 hugo_stats.json
