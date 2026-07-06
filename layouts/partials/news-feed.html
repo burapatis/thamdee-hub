@@ -23,8 +23,10 @@
   {{- $cover := index . "cover" -}}
   {{- if not $cover -}}
     {{- with urls.Parse .link -}}
-      {{- $slug := path.Base .Path -}}
-      {{- $cover = printf "https://thamdee.com/images/news/%s.svg" $slug -}}
+      {{- $slug := path.Base (strings.TrimSuffix .Path "/") -}}
+      {{- if $slug -}}
+        {{- $cover = printf "https://thamdee.com/images/news/%s.svg" $slug -}}
+      {{- end -}}
     {{- end -}}
   {{- end -}}
   <li class="card news-card reveal">
