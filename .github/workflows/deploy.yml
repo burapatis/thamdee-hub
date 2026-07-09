@@ -7,6 +7,9 @@ on:
   repository_dispatch:
     types:
       - thamdee-site-deployed
+  # สำรอง: ดึง RSS ข่าวล่าสุดจาก thamdee.com ทุก 4 ชม. (กรณี sync-hub จาก thamdee-site ล้มเหลว)
+  schedule:
+    - cron: "0 */4 * * *"
 
 permissions:
   contents: read
@@ -36,6 +39,12 @@ jobs:
         run: |
           mkdir -p assets/news
           curl -fsSL "https://thamdee.com/news/index.xml" -o assets/news/feed.xml
+          item_count="$(grep -c '<item>' assets/news/feed.xml || true)"
+          echo "Fetched ${item_count} news item(s) from thamdee.com"
+          if [ "${item_count}" -lt 1 ]; then
+            echo "::error::News feed is empty or unreadable"
+            exit 1
+          fi
 
       - name: Setup Pages
         id: pages
