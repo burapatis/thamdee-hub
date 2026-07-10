@@ -59,4 +59,29 @@
     </p>
   </div>
 </section>
+
+<section id="creator" class="section section-alt" aria-labelledby="creator-heading">
+  <div class="container">
+    <div class="creator-panel reveal">
+      <figure class="creator-photo">
+        <img
+          src="/images/thamdee-creator.png"
+          alt="{{ $hp.creator.image_alt }}"
+          width="1024"
+          height="819"
+          loading="lazy"
+          decoding="async"
+        >
+      </figure>
+      <div class="creator-copy">
+        <p class="eyebrow">{{ $hp.creator.eyebrow }}</p>
+        <h2 id="creator-heading">{{ $hp.creator.heading }}</h2>
+        <p class="creator-name">{{ $hp.creator.name }}</p>
+        <p class="creator-role">{{ $hp.creator.role }}</p>
+        <p class="lead">{{ $hp.creator.bio }}</p>
+        <a class="btn btn-outline" href="{{ $hp.creator.cta.url | safeURL }}" target="_blank" rel="noopener noreferrer">{{ $hp.creator.cta.label }}<span class="visually-hidden">{{ $hp.ui.opens_new_tab }}</span></a>
+      </div>
+    </div>
+  </div>
+</section>
 {{ end }}

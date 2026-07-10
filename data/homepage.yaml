@@ -27,6 +27,17 @@ news:
   read_more: "อ่านต่อ"
   opens_new_tab: " (เปิดในแท็บใหม่)"
 
+creator:
+  eyebrow: "ผู้จัดทำ"
+  heading: "เบื้องหลัง Thamdee"
+  name: "Boorapatis Ploysuwan"
+  role: "นักการศึกษาและผู้จัดทำ Thamdee Ecosystem"
+  bio: "Thamdee Ecosystem เกิดจากความตั้งใจสร้างพื้นที่เรียนรู้ที่เชื่อมโยงกัน — ตั้งแต่แอปในชีวิตประจำวัน สื่อความรู้แบบวิดีโอ ไปจนถึงศูนย์ความรู้เฉพาะทาง — เพื่อให้ทุกคนเข้าถึงการเรียนรู้ที่ดีได้ง่ายขึ้น"
+  cta:
+    label: "เรียนรู้เพิ่มเติมที่ thamdee.com"
+    url: "https://thamdee.com/"
+  image_alt: "Boorapatis Ploysuwan — นักการศึกษาและผู้จัดทำ Thamdee Ecosystem"
+
 ui:
   menu: "เมนู"
   skip_link: "ข้ามไปเนื้อหาหลัก"
